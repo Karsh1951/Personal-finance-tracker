@@ -2,9 +2,11 @@
 import { error } from "console";
 import express, {Express} from "express"
 import mongoose from "mongoose";
+import financialRecordRouter from "./routes/financial-record"
 
 const app:Express =express()
 const port = process.env.PORT || 3001;
+
 
 //apply middleware to allow json data to anypoint of the app
 app.use(express.json());
@@ -17,6 +19,7 @@ mongoose
         .then(()=>console.log("CONNECTED TO MONGODB!"))
         .catch((err)=> console.error("FAILED TO CONNECT MONGODB: ",err));
 
+app.use("/financial-records", financialRecordRouter) ;//extension to the Api endpoint URL
 app.listen(port, ()=> {
     console.log(`Server is running on Port ${port}`);
 });
