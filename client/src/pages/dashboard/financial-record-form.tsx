@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useUser } from "@clerk/clerk-react";
+import { useFinancialRecords } from "../../contexts/financial-record-context";
 
 //if a user types the input(ammount in the form) the value will be the same as in the state
 export const FinancialRecordForm = () => {
@@ -7,6 +8,7 @@ export const FinancialRecordForm = () => {
   const [amount, setAmount] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [paymentMethod, setPaymentMethod] = useState<string>("");
+  const {addRecord} =useFinancialRecords();
 
 
   const { user } = useUser();
@@ -23,7 +25,7 @@ export const FinancialRecordForm = () => {
       paymentMethod: paymentMethod,
     };
 
-    //addRecord(newRecord)calls the database to transmit the data to the server
+    addRecord(newRecord)//calls the database to transmit the data to the server
 
 //setting the description forms to empty after the submission of the form
     setDescription("");

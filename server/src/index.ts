@@ -3,9 +3,11 @@ import { error } from "console";
 import express, {Express} from "express"
 import mongoose from "mongoose";
 import financialRecordRouter from "./routes/financial-record"
+import cors from "cors";
 
 const app:Express =express()
 const port = process.env.PORT || 3001;
+app.use(cors())
 
 
 //apply middleware to allow json data to anypoint of the app

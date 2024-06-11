@@ -5,11 +5,13 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./build/windex.ts",
-    "build":"tsc -p .",
-    "dev":"nodemon ./src/index.ts"
+    "build": "tsc -p .",
+    "dev": "nodemon ./src/index.ts"
   },
   "dependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "mongoose": "^8.4.1",
     "nodemon": "^3.1.3",
