@@ -5,11 +5,11 @@ import FinancialRecordModel from "../schema/financial-record";
 // we want to define a router/routes
 const router = express.Router();
 //we want to query all the users expenses
-router.get("/getAllByUserId/:userId", async(req:Request, res:Response)=>{
+router.get("/getAllByUserId/:userId", async (req:Request, res:Response) =>{
     //try is used to find all the financial records 
     try{
-        const userID =req.params.userID;
-        const records= await FinancialRecordModel.find({userID:userID});
+        const userId =req.params.userId;
+        const records= await FinancialRecordModel.find({userId:userId});
 //an empty record
         if(records.length===0) {
             return res.status(404).send("No records found for the user.");
