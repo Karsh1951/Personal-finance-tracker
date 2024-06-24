@@ -8,7 +8,7 @@ export const FinancialRecordForm = () => {
   const [amount, setAmount] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [paymentMethod, setPaymentMethod] = useState<string>("");
-  const {addRecord} =useFinancialRecords();
+  const {addRecord} = useFinancialRecords();
 
 
   const { user } = useUser();
